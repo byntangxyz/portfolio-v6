@@ -18,7 +18,7 @@
       :transition="{ duration: 0.6, delay: 0.18, ease: [0.22, 1, 0.36, 1] }"
     >
       Bintang<br />
-      <span class="text-blue-400">Murtifandy</span>
+      <span class="text-blue-400"> Murtifandy</span>
     </Motion>
 
     <Motion

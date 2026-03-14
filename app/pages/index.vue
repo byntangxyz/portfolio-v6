@@ -12,13 +12,13 @@
 useSeoMeta({
   title: 'Bintang Murtifandy ─ Fullstack Developer and Network Engineering',
   description:
-    'Hello world! I am Bintang Murtifandy, a Fullstack Web Developer and DevOps learner currently exploring Network Engineering and infrastructure. Let us connect and share ideas.',
+    'Hello world! I am Bintang Murtifandy, a Fullstack Web Developer currently exploring Network Engineering and infrastructure.',
   ogTitle: 'Bintang Murtifandy ─ Fullstack Developer and Network Engineering',
   ogDescription:
-    'Hello world! I am Bintang Murtifandy, a Fullstack Web Developer and DevOps learner currently exploring Network Engineering and infrastructure. Let us connect and share ideas.',
+    'Hello world! I am Bintang Murtifandy, a Fullstack Web Developer currently exploring Network Engineering and infrastructure.',
   twitterTitle:
     'Bintang Murtifandy ─ Fullstack Developer and Network Engineering',
   twitterDescription:
-    'Hello world! I am Bintang Murtifandy, a Fullstack Web Developer and DevOps learner currently exploring Network Engineering and infrastructure. Let us connect and share ideas.',
+    'Hello world! I am Bintang Murtifandy, a Fullstack Web Developer currently exploring Network Engineering and infrastructure.',
 });
 </script>

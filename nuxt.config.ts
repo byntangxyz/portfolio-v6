@@ -14,7 +14,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: {
-        lang: 'id',
+        lang: 'en',
       },
       viewport: 'width=device-width, initial-scale=1, viewport-fit=cover',
       titleTemplate: '%s',
@@ -28,6 +28,52 @@ export default defineNuxtConfig({
         { rel: 'apple-touch-icon', href: '/logo.png' },
         { rel: 'manifest', href: '/site.webmanifest' },
       ],
+    },
+  },
+  nitro: {
+    compressPublicAssets: true,
+    routeRules: {
+      '/': {
+        prerender: true,
+        headers: {
+          'cache-control':
+            'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
+        },
+      },
+      '/about': {
+        prerender: true,
+        headers: {
+          'cache-control':
+            'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
+        },
+      },
+      '/portofolio': {
+        prerender: true,
+        headers: {
+          'cache-control':
+            'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
+        },
+      },
+      '/contact': {
+        prerender: true,
+        headers: {
+          'cache-control':
+            'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
+        },
+      },
+      '/guestbook': {
+        prerender: true,
+        headers: {
+          'cache-control':
+            'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
+        },
+      },
+      '/sitemap.xml': {
+        headers: {
+          'cache-control':
+            'public, max-age=0, s-maxage=1800, stale-while-revalidate=86400',
+        },
+      },
     },
   },
   colorMode: {
