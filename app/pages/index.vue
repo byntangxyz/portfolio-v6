@@ -10,13 +10,14 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Portofolio ── Bintang Murtifandy',
+  title: 'Bintang Murtifandy ─ Fullstack Developer and Network Engineering',
   description:
     'Hello world! I am Bintang Murtifandy, a Fullstack Web Developer and DevOps learner currently exploring Network Engineering and infrastructure. Let us connect and share ideas.',
-  ogTitle: 'Portofolio ── Bintang Murtifandy',
+  ogTitle: 'Bintang Murtifandy ─ Fullstack Developer and Network Engineering',
   ogDescription:
     'Hello world! I am Bintang Murtifandy, a Fullstack Web Developer and DevOps learner currently exploring Network Engineering and infrastructure. Let us connect and share ideas.',
-  twitterTitle: 'Portofolio ── Bintang Murtifandy',
+  twitterTitle:
+    'Bintang Murtifandy ─ Fullstack Developer and Network Engineering',
   twitterDescription:
     'Hello world! I am Bintang Murtifandy, a Fullstack Web Developer and DevOps learner currently exploring Network Engineering and infrastructure. Let us connect and share ideas.',
 });
