@@ -55,7 +55,7 @@ export default defineNuxtConfig({
         },
       },
       '/contact': {
-        prerender: true,
+        prerender: false,
         headers: {
           'cache-control':
             'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',

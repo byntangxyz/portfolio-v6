@@ -141,6 +141,7 @@ const { data: lanyard } = await useFetch<{
   success: boolean;
   data: { discord_status: DiscordStatus };
 }>(`https://api.lanyard.rest/v1/users/${DISCORD_USER_ID}`, {
+  server: false,
   key: `discord-${DISCORD_USER_ID}`,
   default: () => ({
     success: false,
