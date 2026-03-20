@@ -3,7 +3,14 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
-  modules: ['@nuxt/ui', 'motion-v/nuxt', '@nuxt/image'],
+  modules: ['@nuxt/ui', 'motion-v/nuxt', '@nuxt/image', '@nuxtjs/supabase'],
+  supabase: {
+    url: process.env.NUXT_PUBLIC_SUPABASE_URL,
+    key:
+      process.env.NUXT_PUBLIC_SUPABASE_KEY ||
+      process.env.NUXT_PUBLIC_SUPABASE_ANON_KEY,
+    redirect: false,
+  },
   runtimeConfig: {
     public: {
       siteUrl:
@@ -62,10 +69,9 @@ export default defineNuxtConfig({
         },
       },
       '/guestbook': {
-        prerender: true,
+        prerender: false,
         headers: {
-          'cache-control':
-            'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
+          'cache-control': 'private, no-store, no-cache, must-revalidate',
         },
       },
       '/sitemap.xml': {
