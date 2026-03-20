@@ -151,20 +151,20 @@
 </template>
 
 <script setup lang="ts">
-import { useScroll, useTransform } from 'motion-v';
+import type { PortfolioProjectItem } from '~/types/content';
 
 const sectionRef = ref<HTMLElement | null>(null);
-const { scrollYProgress } = useScroll({
-  target: sectionRef,
-  offset: ['start end', 'end start'],
+const contentY = useElementParallax(sectionRef, {
+  output: ['40px', '-40px'],
 });
-const contentY = useTransform(scrollYProgress, [0, 1], ['40px', '-40px']);
-const bgY = useTransform(scrollYProgress, [0, 1], ['80px', '-30px']);
+const bgY = useElementParallax(sectionRef, {
+  output: ['80px', '-30px'],
+});
 
 const categories = ['All', 'Web', 'Infrastructure'];
 const activeCategory = ref('All');
 
-const projects = [
+const projects: PortfolioProjectItem[] = [
   {
     title: 'Personal Portfolio',
     description:
@@ -216,9 +216,5 @@ const projects = [
   },
 ];
 
-const filteredProjects = computed(() =>
-  activeCategory.value === 'All'
-    ? projects
-    : projects.filter((p) => p.category === activeCategory.value)
-);
+const filteredProjects = useCategoryFilter(projects, activeCategory);
 </script>

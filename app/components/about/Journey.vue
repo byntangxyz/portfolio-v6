@@ -66,16 +66,14 @@
 </template>
 
 <script setup lang="ts">
-import { useScroll, useTransform } from 'motion-v';
+import type { TimelineItem } from '~/types/content';
 
 const journeyRef = ref<HTMLElement | null>(null);
-const { scrollYProgress: journeyProgress } = useScroll({
-  target: journeyRef,
-  offset: ['start end', 'end start'],
+const journeyY = useElementParallax(journeyRef, {
+  output: ['50px', '-30px'],
 });
-const journeyY = useTransform(journeyProgress, [0, 1], ['50px', '-30px']);
 
-const timeline = [
+const timeline: TimelineItem[] = [
   {
     year: '2022',
     title: 'Started the Journey',

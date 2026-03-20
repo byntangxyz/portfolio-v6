@@ -26,14 +26,14 @@ const updateScrollbar = () => {
 };
 
 onMounted(() => {
-  window.addEventListener('scroll', updateScrollbar, { passive: true });
   updateScrollbar();
 });
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', updateScrollbar);
   if (hideTimeout) clearTimeout(hideTimeout);
 });
+
+useWindowEvent('scroll', updateScrollbar, { passive: true });
 </script>
 
 <template>

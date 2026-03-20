@@ -1,6 +1,5 @@
 <template>
   <div class="flex flex-col gap-16 pt-28 pb-24">
-    <!-- ── Header ─────────────────────────────────────────── -->
     <Motion
       as="div"
       class="flex flex-col gap-3"
@@ -24,7 +23,6 @@
       </p>
     </Motion>
 
-    <!-- ── Social cards grid ──────────────────────────────── -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
       <Motion
         v-for="(social, i) in socials"
@@ -109,6 +107,12 @@
 </template>
 
 <script setup lang="ts">
+import type {
+  DiscordStatus,
+  LanyardResponse,
+  SocialItem,
+} from '~/types/contact';
+
 useSeoMeta({
   title: 'Contact ── Bintang Murtifandy',
   description: "Get in touch with Bintang Murtifandy — let's connect!",
@@ -120,8 +124,6 @@ useSeoMeta({
 
 const DISCORD_USER_ID = '1313127828119748664';
 const DISCORD_TAG = 'byntangxyz_';
-
-type DiscordStatus = 'online' | 'idle' | 'dnd' | 'offline';
 
 const STATUS_COLOR: Record<DiscordStatus, string> = {
   online: '#22c55e',
@@ -137,17 +139,17 @@ const STATUS_LABEL: Record<DiscordStatus, string> = {
   offline: 'Offline',
 };
 
-const { data: lanyard } = await useFetch<{
-  success: boolean;
-  data: { discord_status: DiscordStatus };
-}>(`https://api.lanyard.rest/v1/users/${DISCORD_USER_ID}`, {
-  server: false,
-  key: `discord-${DISCORD_USER_ID}`,
-  default: () => ({
-    success: false,
-    data: { discord_status: 'offline' as DiscordStatus },
-  }),
-});
+const { data: lanyard } = await useFetch<LanyardResponse>(
+  `https://api.lanyard.rest/v1/users/${DISCORD_USER_ID}`,
+  {
+    server: false,
+    key: `discord-${DISCORD_USER_ID}`,
+    default: () => ({
+      success: false,
+      data: { discord_status: 'offline' as DiscordStatus },
+    }),
+  }
+);
 
 const discordStatus = computed<DiscordStatus>(
   () => lanyard.value?.data?.discord_status ?? 'offline'
@@ -167,7 +169,7 @@ onUnmounted(() => {
   if (copyTimer) clearTimeout(copyTimer);
 });
 
-const socials = [
+const socials: SocialItem[] = [
   {
     name: 'Email',
     handle: 'contact@bintangmurtifandy.id',

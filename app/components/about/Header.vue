@@ -34,8 +34,5 @@
 </template>
 
 <script setup lang="ts">
-import { useScroll, useTransform } from 'motion-v';
-
-const { scrollY } = useScroll();
-const headerBgY = useTransform(scrollY, [0, 500], ['0px', '-90px']);
+const headerBgY = usePageParallax({ output: ['0px', '-90px'] });
 </script>

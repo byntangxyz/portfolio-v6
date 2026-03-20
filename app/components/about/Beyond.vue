@@ -56,16 +56,14 @@
 </template>
 
 <script setup lang="ts">
-import { useScroll, useTransform } from 'motion-v';
+import type { InterestItem } from '~/types/content';
 
 const beyondRef = ref<HTMLElement | null>(null);
-const { scrollYProgress: beyondProgress } = useScroll({
-  target: beyondRef,
-  offset: ['start end', 'end start'],
+const beyondY = useElementParallax(beyondRef, {
+  output: ['35px', '-35px'],
 });
-const beyondY = useTransform(beyondProgress, [0, 1], ['35px', '-35px']);
 
-const interests = [
+const interests: InterestItem[] = [
   {
     icon: 'i-lucide-music',
     label: 'Music',

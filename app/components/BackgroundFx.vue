@@ -26,12 +26,9 @@ const onMouseMove = (e: MouseEvent) => {
 onMounted(() => {
   mouseX.set(window.innerWidth / 2 - 340);
   mouseY.set(window.innerHeight / 2 - 340);
-  window.addEventListener('mousemove', onMouseMove, { passive: true });
 });
 
-onUnmounted(() => {
-  window.removeEventListener('mousemove', onMouseMove);
-});
+useWindowEvent('mousemove', onMouseMove, { passive: true });
 </script>
 
 <style scoped>

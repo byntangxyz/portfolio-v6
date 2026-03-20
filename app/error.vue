@@ -18,22 +18,11 @@
 </template>
 
 <script setup lang="ts">
-import { clearError } from '#app';
-
 useSeoMeta({
   title: '404 - Page Not Found',
   description: 'The requested page could not be found.',
   robots: 'noindex,nofollow',
 });
-
-const props = defineProps({
-  error: Object,
-});
-
-const handleError = () => {
-  // Clears the error and redirects to the home page
-  clearError({ redirect: '/' });
-};
 </script>
 
 <style scoped></style>

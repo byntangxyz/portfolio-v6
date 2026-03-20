@@ -39,7 +39,7 @@
 </template>
 
 <script setup lang="ts">
-const skills = [
+const skills: string[] = [
   'JavaScript',
   'TypeScript',
   'React',

@@ -93,16 +93,14 @@
 </template>
 
 <script setup lang="ts">
-import { useScroll, useTransform } from 'motion-v';
+import type { ExperienceItem } from '~/types/content';
 
 const sectionRef = ref<HTMLElement | null>(null);
-const { scrollYProgress } = useScroll({
-  target: sectionRef,
-  offset: ['start end', 'end start'],
+const contentY = useElementParallax(sectionRef, {
+  output: ['50px', '-35px'],
 });
-const contentY = useTransform(scrollYProgress, [0, 1], ['50px', '-35px']);
 
-const experiences = [
+const experiences: ExperienceItem[] = [
   {
     period: '2024 - Present',
     title: 'Student Developer',

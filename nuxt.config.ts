@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl:
-        process.env.NUXT_PUBLIC_SITE_URL || 'https://bintangmurtifandy.id',
+        import.meta.env.NUXT_PUBLIC_SITE_URL || 'https://bintangmurtifandy.id',
       siteName: 'Bintang Murtifandy',
     },
   },

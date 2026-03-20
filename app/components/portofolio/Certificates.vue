@@ -108,17 +108,17 @@
 </template>
 
 <script setup lang="ts">
-import { useScroll, useTransform } from 'motion-v';
+import type { CertificateItem } from '~/types/content';
 
 const sectionRef = ref<HTMLElement | null>(null);
-const { scrollYProgress } = useScroll({
-  target: sectionRef,
-  offset: ['start end', 'end start'],
+const contentY = useElementParallax(sectionRef, {
+  output: ['40px', '-40px'],
 });
-const contentY = useTransform(scrollYProgress, [0, 1], ['40px', '-40px']);
-const bgY = useTransform(scrollYProgress, [0, 1], ['60px', '-30px']);
+const bgY = useElementParallax(sectionRef, {
+  output: ['60px', '-30px'],
+});
 
-const certificates = [
+const certificates: CertificateItem[] = [
   {
     title: 'Cisco Networking Academy — Introduction to Networks',
     issuer: 'Cisco',

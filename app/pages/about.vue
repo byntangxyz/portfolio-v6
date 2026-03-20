@@ -222,7 +222,7 @@
 </template>
 
 <script setup lang="ts">
-import { useScroll, useTransform } from 'motion-v';
+import type { InterestItem, TimelineItem } from '~/types/content';
 
 useSeoMeta({
   title: 'About ── Bintang Murtifandy',
@@ -236,32 +236,27 @@ useSeoMeta({
     'Fullstack developer, network engineer, and tech enthusiast. Learn more about Bintang Murtifandy.',
 });
 
-const { scrollY } = useScroll();
-const headerBgY = useTransform(scrollY, [0, 500], ['0px', '-90px']);
+const headerBgY = usePageParallax({ output: ['0px', '-90px'] });
 
 const bioRef = ref<HTMLElement | null>(null);
-const { scrollYProgress: bioProgress } = useScroll({
-  target: bioRef,
-  offset: ['start end', 'end start'],
+const bioCardY = useElementParallax(bioRef, {
+  output: ['40px', '-40px'],
 });
-const bioCardY = useTransform(bioProgress, [0, 1], ['40px', '-40px']);
-const bioBgY = useTransform(bioProgress, [0, 1], ['100px', '-30px']);
+const bioBgY = useElementParallax(bioRef, {
+  output: ['100px', '-30px'],
+});
 
 const journeyRef = ref<HTMLElement | null>(null);
-const { scrollYProgress: journeyProgress } = useScroll({
-  target: journeyRef,
-  offset: ['start end', 'end start'],
+const journeyY = useElementParallax(journeyRef, {
+  output: ['50px', '-30px'],
 });
-const journeyY = useTransform(journeyProgress, [0, 1], ['50px', '-30px']);
 
 const beyondRef = ref<HTMLElement | null>(null);
-const { scrollYProgress: beyondProgress } = useScroll({
-  target: beyondRef,
-  offset: ['start end', 'end start'],
+const beyondY = useElementParallax(beyondRef, {
+  output: ['35px', '-35px'],
 });
-const beyondY = useTransform(beyondProgress, [0, 1], ['35px', '-35px']);
 
-const timeline = [
+const timeline: TimelineItem[] = [
   {
     year: '2022',
     title: 'Started the Journey',
@@ -294,7 +289,7 @@ const timeline = [
   },
 ];
 
-const interests = [
+const interests: InterestItem[] = [
   {
     icon: 'i-lucide-music',
     label: 'Music',

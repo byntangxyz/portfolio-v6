@@ -68,13 +68,11 @@
 </template>
 
 <script setup lang="ts">
-import { useScroll, useTransform } from 'motion-v';
-
 const bioRef = ref<HTMLElement | null>(null);
-const { scrollYProgress: bioProgress } = useScroll({
-  target: bioRef,
-  offset: ['start end', 'end start'],
+const bioCardY = useElementParallax(bioRef, {
+  output: ['40px', '-40px'],
 });
-const bioCardY = useTransform(bioProgress, [0, 1], ['40px', '-40px']);
-const bioBgY = useTransform(bioProgress, [0, 1], ['100px', '-30px']);
+const bioBgY = useElementParallax(bioRef, {
+  output: ['100px', '-30px'],
+});
 </script>

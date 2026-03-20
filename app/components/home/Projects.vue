@@ -86,7 +86,9 @@
 </template>
 
 <script setup lang="ts">
-const projects = [
+import type { HomeProjectItem } from '~/types/content';
+
+const projects: HomeProjectItem[] = [
   {
     title: 'NEGSAS Website',
     description:

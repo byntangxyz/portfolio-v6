@@ -172,11 +172,5 @@ const handleScroll = () => {
   isScrolled.value = window.scrollY > 50;
 };
 
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll, { passive: true });
-});
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll);
-});
+useWindowEvent('scroll', handleScroll, { passive: true });
 </script>
