@@ -39,7 +39,7 @@ useWindowEvent('scroll', updateScrollbar, { passive: true });
 <template>
   <Motion
     as="div"
-    class="fixed right-2 top-2 bottom-2 w-[5px] z-[9999] pointer-events-none"
+    class="fixed right-2 top-2 bottom-2 w-1.25 z-9999 pointer-events-none"
     :initial="{ opacity: 0 }"
     :animate="{ opacity: isVisible || isHovering ? 1 : 0 }"
     :transition="{ duration: 0.35, ease: 'easeInOut' }"

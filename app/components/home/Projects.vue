@@ -90,11 +90,11 @@ import type { HomeProjectItem } from '~/types/content';
 
 const projects: HomeProjectItem[] = [
   {
-    title: 'NEGSAS Website',
+    title: 'MQTTify',
     description:
-      'School website for SMPN 1 Sanden that I built using NextJS for frontend and Strapi for blog and content management',
-    tags: ['NextJS', 'TypeScript', 'Tailwind CSS', 'Strapi'],
-    icon: 'i-lucide-code-2',
+      'The sleek, modern, and simple Flutter application to communicate with your MQTT Broker and reliably trigger remote IoT devices like a Smart Lamp instantly.',
+    tags: ['Flutter', 'Dart', 'Mobile App', 'MQTT'],
+    icon: 'i-lucide-tablet-smartphone',
   },
   {
     title: 'PVE Pakem',

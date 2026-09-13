@@ -91,7 +91,7 @@
         <Motion
           key="nav-backdrop"
           as="div"
-          class="fixed inset-0 z-[9998] bg-black/50 backdrop-blur-sm"
+          class="fixed inset-0 z-9998 bg-black/50 backdrop-blur-sm"
           :initial="{ opacity: 0 }"
           :animate="{ opacity: 1 }"
           :exit="{ opacity: 0 }"
@@ -103,7 +103,7 @@
         <Motion
           key="nav-panel"
           as="nav"
-          class="fixed inset-x-3 sm:inset-x-4 top-20 sm:top-24 z-[9999] bg-blue-950/95 backdrop-blur-xl rounded-2xl border border-white/10 p-4 sm:p-5 shadow-2xl shadow-black/50"
+          class="fixed inset-x-3 sm:inset-x-4 top-20 sm:top-24 z-9999 bg-blue-950/95 backdrop-blur-xl rounded-2xl border border-white/10 p-4 sm:p-5 shadow-2xl shadow-black/50"
           :initial="{ opacity: 0, scale: 0.95, y: -12 }"
           :animate="{ opacity: 1, scale: 1, y: 0 }"
           :exit="{ opacity: 0, scale: 0.95, y: -8 }"

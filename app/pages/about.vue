@@ -34,7 +34,7 @@
 
     <section ref="bioRef" class="relative">
       <Motion
-        class="absolute -top-10 -left-4 font-pixel font-bold uppercase leading-none select-none pointer-events-none text-[5rem] md:text-[7rem] text-white/[0.03]"
+        class="absolute -top-10 -left-4 font-pixel font-bold uppercase leading-none select-none pointer-events-none text-[5rem] md:text-[7rem] text-white/3"
         :style="{ y: bioBgY }"
         aria-hidden="true"
       >
@@ -189,7 +189,7 @@
               v-for="(item, i) in interests"
               :key="item.label"
               as="div"
-              class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.04] border border-white/8"
+              class="flex items-start gap-4 p-4 rounded-xl bg-white/4 border border-white/8"
               :initial="{ opacity: 0, y: 20 }"
               :whileInView="{ opacity: 1, y: 0 }"
               :viewport="{ once: true, margin: '-30px' }"
