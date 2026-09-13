@@ -47,7 +47,7 @@
           :transition="{ delay: 0.3, duration: 0.4, ease: 'easeOut' }"
         >
           <UNavigationMenu
-            :items="navLinks"
+            :items="desktopNavLinks"
             color="neutral"
             class="font-pjs text-xl hidden md:flex"
           />
@@ -60,14 +60,13 @@
           :animate="{ opacity: 1 }"
           :transition="{ delay: 0.42, duration: 0.35, ease: 'easeOut' }"
         >
-          <UTooltip text="Open on GitHub" :kbds="['meta', 'M']">
+          <UTooltip text="Resume">
             <UButton
               color="neutral"
               variant="ghost"
-              to="https://github.com/byntangxyz"
-              target="_blank"
-              icon="i-simple-icons-github"
-              aria-label="GitHub"
+              to="/resume"
+              icon="i-lucide-file-text"
+              aria-label="Resume"
             />
           </UTooltip>
 
@@ -125,7 +124,7 @@
           </div>
           <ul class="flex flex-col gap-1">
             <Motion
-              v-for="(link, index) in navLinks"
+              v-for="(link, index) in mobileNavLinks"
               :key="link.label"
               as="li"
               :initial="{ opacity: 0, x: -10 }"
@@ -157,10 +156,19 @@
 import { AnimatePresence } from 'motion-v';
 import type { NavigationMenuItem } from '@nuxt/ui';
 
-const navLinks = computed<NavigationMenuItem[]>(() => [
+const desktopNavLinks = computed<NavigationMenuItem[]>(() => [
   { label: 'Home', to: '/' },
   { label: 'About', to: '/about' },
   { label: 'Portofolio', to: '/portofolio' },
+  { label: 'GuestBook', to: '/guestbook' },
+  { label: 'Contact', to: '/contact' },
+]);
+
+const mobileNavLinks = computed<NavigationMenuItem[]>(() => [
+  { label: 'Home', to: '/' },
+  { label: 'About', to: '/about' },
+  { label: 'Portofolio', to: '/portofolio' },
+  { label: 'Resume', to: '/resume' },
   { label: 'GuestBook', to: '/guestbook' },
   { label: 'Contact', to: '/contact' },
 ]);

@@ -61,6 +61,13 @@ export default defineNuxtConfig({
             'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
         },
       },
+      '/resume': {
+        prerender: true,
+        headers: {
+          'cache-control':
+            'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
+        },
+      },
       '/contact': {
         prerender: false,
         headers: {
